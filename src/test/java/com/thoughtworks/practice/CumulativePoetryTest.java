@@ -22,4 +22,15 @@ public class CumulativePoetryTest {
         poetry.add(line);
         Assertions.assertEquals(2,poetry.size());
     }
+
+    public void givenRevealForDayAsThree_WhenUnfold_ThenShouldReturnTwoLine(){
+
+        CumulativePoetry cumulativePoetry = new CumulativePoetry();
+        List poetry = new ArrayList();
+        List line =cumulativePoetry.toUnfold(3);
+        poetry.add(line);
+        Assertions.assertEquals(3,poetry.size());
+    }
+
+
 }
