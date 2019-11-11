@@ -25,8 +25,8 @@ public class CumulativePoetry {
     public List toUnfold(int revealForDay, int echo) {
         List<String> newPoetry = new ArrayList();
         for (int i = poetry.size() - 1; i >= poetry.size() - revealForDay; i--) {
-             int count = 1;
-             while (count <= echo) {
+            int count = 1;
+            while (count <= echo) {
                 newPoetry.add(poetry.get(i));
                 count++;
             }
