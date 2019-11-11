@@ -5,7 +5,7 @@ import java.util.List;
 
 public class CumulativePoetry {
 
-    private List poetry = new ArrayList<>();
+    List poetry = new ArrayList<>();
 
     public CumulativePoetry() {
         poetry.add("This is the horse and the hound and the horn that belonged to");
@@ -22,7 +22,10 @@ public class CumulativePoetry {
         poetry.add("the house that Jack built");
     }
 
-    public String toUnfold(int revealForDay) {
-        return "This is the house that jack built.";
+    public List toUnfold(int revealForDay) {
+        for (int i = poetry.size()-1;i>=revealForDay;i--){
+            return poetry;
+        }
+        return null;
     }
 }
