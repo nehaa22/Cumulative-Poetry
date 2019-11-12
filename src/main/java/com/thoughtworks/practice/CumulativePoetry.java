@@ -6,7 +6,7 @@ import java.util.List;
 public class CumulativePoetry {
 
     private List<String> poetry = new ArrayList<>();
-    int echo;
+    private int echo;
 
     public CumulativePoetry(int echo) {
         this.echo = echo;
@@ -29,11 +29,19 @@ public class CumulativePoetry {
 
         StringBuilder result = new StringBuilder();
         result.append("This is ");
-        for (int i = poetry.size()-1; i >=poetry.size()-revealForDay; i--) {
+        int dayCount =0;
+
+        for (int i = poetry.size() - 1; i >= poetry.size() - revealForDay; i--) {
+            dayCount++;
             int count = 1;
             while (count <= echo) {
                 result.append(poetry.get(i));
-                result.append("\n");
+                if (count == echo && dayCount == revealForDay)
+                {
+                    result.append(".");
+                }else {
+                    result.append("\n");
+                }
                 count++;
             }
         }
