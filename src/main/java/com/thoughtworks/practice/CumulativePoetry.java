@@ -37,11 +37,9 @@ public class CumulativePoetry {
             while (count <= echo) {
                 result.append(poetry.get(i));
                 if (count == echo && dayCount == revealForDay)
-                {
-                    result.append(".");
-                }else {
-                    result.append("\n");
-                }
+                { result.append("."); }
+                else {
+                    result.append("\n"); }
                 count++;
             }
         }
