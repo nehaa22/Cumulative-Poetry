@@ -6,8 +6,11 @@ import java.util.List;
 public class CumulativePoetry {
 
     private List<String> poetry = new ArrayList<>();
+    int echo;
 
-    public CumulativePoetry() {
+    public CumulativePoetry(int echo) {
+        this.echo = echo;
+
         poetry.add("the horse and the hound and the horn that belonged to");
         poetry.add("the farmer sowing his corn that kept");
         poetry.add("the rooster that crowed in the morn that woke");
@@ -23,12 +26,17 @@ public class CumulativePoetry {
     }
 
     public StringBuilder toUnfold(int revealForDay) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("This is ");
-        for (int i = poetry.size() - 1; i >= poetry.size() - revealForDay; i--) {
-                sb.append(poetry.get(i));
-                sb.append("\n");
+
+        StringBuilder result = new StringBuilder();
+        result.append("This is ");
+        for (int i = poetry.size()-1; i >=poetry.size()-revealForDay; i--) {
+            int count = 1;
+            while (count <= echo) {
+                result.append(poetry.get(i));
+                result.append("\n");
+                count++;
             }
-        return sb;
+        }
+        return result;
     }
 }
