@@ -25,24 +25,15 @@ public class CumulativePoetry {
         poetry.add("the house that Jack built");
     }
 
-    public StringBuilder toUnfold(int revealForDay) {
+    public String toUnfold(int revealForDay) {
 
+        Echo echoNumber = new Echo(echo);
         StringBuilder result = new StringBuilder();
         result.append("This is ");
-        int dayCount =0;
 
         for (int i = poetry.size() - 1; i >= poetry.size() - revealForDay; i--) {
-            dayCount++;
-            int count = 1;
-            while (count <= echo) {
-                result.append(poetry.get(i));
-                if (count == echo && dayCount == revealForDay)
-                { result.append("."); }
-                else {
-                    result.append("\n"); }
-                count++;
-            }
+            result.append(echoNumber.toUnfoldByEcho(poetry.get(i)));
         }
-        return result;
+        return result.toString().trim()+".";
     }
 }
