@@ -39,4 +39,11 @@ class CumulativePoetryTest {
         CumulativePoetry cumulativePoetry = new CumulativePoetry(2);
         assertEquals("This is the house that Jack built\nthe house that Jack built\n",cumulativePoetry.toUnfold(1).toString());
     }
+
+    @Test
+    void givenRevealForDayAsThreeAndEchoAsThree_whenUnfold_ThenShouldReturnOneLineThreeTime() {
+
+        CumulativePoetry cumulativePoetry = new CumulativePoetry(3);
+        assertEquals("This is the house that Jack built\nthe house that Jack built\nthe house that Jack built\nthe malth that lay in\nthe malth that lay in\nthe malth that lay in\nthe rat that ate\nthe rat that ate\nthe rat that ate\n",cumulativePoetry.toUnfold(3).toString());
+    }
 }
