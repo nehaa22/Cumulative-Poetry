@@ -1,6 +1,6 @@
 package com.thoughtworks.practice;
 
-class Echo implements Formatter{
+class Echo implements Formatter {
 
     private int repeatNumber;
 
@@ -8,12 +8,13 @@ class Echo implements Formatter{
         this.repeatNumber = repeatNumber;
     }
 
-    int count=0;
+    private int count = 0;
+
     @Override
     public String format(String line) {
         StringBuilder result = new StringBuilder();
         count++;
-        if(count==1){
+        if (count == 1) {
             result.append("This is ");
         }
         for (int i = repeatNumber; i > 0; i--) {

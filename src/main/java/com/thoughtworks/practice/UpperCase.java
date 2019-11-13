@@ -1,6 +1,6 @@
 package com.thoughtworks.practice;
 
-public class UpperCase implements Formatter{
+public class UpperCase implements Formatter {
 
     private int count;
 
@@ -9,7 +9,7 @@ public class UpperCase implements Formatter{
         StringBuilder result = new StringBuilder();
 
         count++;
-        if(count==1){
+        if (count == 1) {
             result.append("THIS IS ");
         }
         result.append(line.toUpperCase()).append("\n");
