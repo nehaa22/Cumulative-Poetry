@@ -1,18 +1,19 @@
 package com.thoughtworks.practice;
 
-class Echo {
+class Echo implements Formatter{
 
-    private int repeatNumber;
+    protected int repeatNumber;
 
     Echo(int repeatNumber) {
         this.repeatNumber = repeatNumber;
     }
-
-    String toUnfoldByEcho(String line) {
+    @Override
+    public String format(String line) {
         StringBuilder result = new StringBuilder();
         for (int i = repeatNumber; i > 0; i--) {
             result.append(line).append("\n");
         }
         return result.toString();
     }
+
 }

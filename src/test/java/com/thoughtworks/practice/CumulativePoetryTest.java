@@ -35,23 +35,29 @@ class CumulativePoetryTest {
     }
 
     @Test
-    void givenRevealForDayAsTwoAndEchoAsTh_whenUnfold_ThenShouldReturnOneLineThreeTime() {
+    void givenRevealForDayAsTwoAndEchoAsTh_whenUnfoldUsingEcho_ThenShouldReturnOneLineThreeTime() {
 
         CumulativePoetry cumulativePoetry = new CumulativePoetry(new Echo(2));
         assertEquals("This is the house that Jack built\nthe house that Jack built.", cumulativePoetry.toUnfold(1));
     }
 
     @Test
-    void givenRevealForDayAsThreeAndEchoAsThree_whenUnfold_ThenShouldReturnOneLineThreeTime() {
+    void givenRevealForDayAsThreeAndEchoAsThree_whenUnfoldUsingEcho_ThenShouldReturnOneLineThreeTime() {
 
         CumulativePoetry cumulativePoetry = new CumulativePoetry(new Echo(3));
         assertEquals("This is the house that Jack built\nthe house that Jack built\nthe house that Jack built\nthe malth that lay in\nthe malth that lay in\nthe malth that lay in\nthe rat that ate\nthe rat that ate\nthe rat that ate.", cumulativePoetry.toUnfold(3).toString());
     }
 
     @Test
-    void givenRevealForDayAsFourAndEchoAsThree_whenUnfold_ThenShouldReturnOneLineThreeTime() {
+    void givenRevealForDayAsFourAndEchoAsThree_whenUnfoldUsingEcho_ThenShouldReturnOneLineThreeTime() {
 
         CumulativePoetry cumulativePoetry = new CumulativePoetry(new Echo(3));
         assertEquals("This is the house that Jack built\nthe house that Jack built\nthe house that Jack built\nthe malth that lay in\nthe malth that lay in\nthe malth that lay in\nthe rat that ate\nthe rat that ate\nthe rat that ate\nthe cat that killed\nthe cat that killed\nthe cat that killed.", cumulativePoetry.toUnfold(4).toString());
+    }
+
+    @Test
+    void givenRevealForDayAsTwo_WhenUnfoldUsingUppercase_ThenShouldZReturnResult(){
+        CumulativePoetry cumulativePoetry = new CumulativePoetry(new UpperCase());
+        assertEquals("THIS IS THE HOUSE THAT JACK BUILT\nTHE MALTH THAT LAY IN.",cumulativePoetry.toUnfold(2));
     }
 }

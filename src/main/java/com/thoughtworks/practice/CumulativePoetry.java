@@ -6,10 +6,10 @@ import java.util.List;
 public class CumulativePoetry {
 
     private List<String> poetry = new ArrayList<>();
-    private Echo echo;
+    private Formatter formatter;
 
-    public CumulativePoetry(Echo echo) {
-        this.echo = echo;
+    public CumulativePoetry(Formatter formatter) {
+        this.formatter = formatter;
 
         poetry.add("the horse and the hound and the horn that belonged to");
         poetry.add("the farmer sowing his corn that kept");
@@ -28,11 +28,16 @@ public class CumulativePoetry {
     public String toUnfold(int revealForDay) {
 
         StringBuilder result = new StringBuilder();
-        result.append("This is ");
+        if(formatter instanceof UpperCase){
+            result.append("THIS IS ");
+        }
+        else{
+            result.append("This is ");
+        }
 
         for (int i = poetry.size() - 1; i >= poetry.size() - revealForDay; i--) {
-            result.append(echo.toUnfoldByEcho(poetry.get(i)));
+            result.append(formatter.format(poetry.get(i)));
         }
-        return result.toString().trim()+".";
+        return result.toString().trim() + ".";
     }
 }
