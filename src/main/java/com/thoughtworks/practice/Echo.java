@@ -15,5 +15,4 @@ class Echo implements Formatter{
         }
         return result.toString();
     }
-
 }

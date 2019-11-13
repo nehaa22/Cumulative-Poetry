@@ -56,8 +56,18 @@ class CumulativePoetryTest {
     }
 
     @Test
-    void givenRevealForDayAsTwo_WhenUnfoldUsingUppercase_ThenShouldZReturnResult(){
+    void givenRevealForDayAsTwo_WhenUnfoldUsingUppercase_ThenShouldReturnResult(){
         CumulativePoetry cumulativePoetry = new CumulativePoetry(new UpperCase());
         assertEquals("THIS IS THE HOUSE THAT JACK BUILT\nTHE MALTH THAT LAY IN.",cumulativePoetry.toUnfold(2));
     }
+
+    @Test
+    void givenRevealForDaytwoAndEchoAsTwo_WhenUnfoldUsingEchoAndUpperCase_ThenShouldReturnResult(){
+        DualFormatter dualFormatter=new DualFormatter(new Echo(2),new UpperCase());
+        CumulativePoetry cumulativePoetryU = new CumulativePoetry(dualFormatter);
+        assertEquals("THIS IS THE HOUSE THAT JACK BUILT\nTHE HOUSE THAT JACK BUILT\nTHE MALTH THAT LAY IN\nTHE MALTH THAT LAY IN.",cumulativePoetryU.toUnfold(2));
+
+    }
+
+
 }

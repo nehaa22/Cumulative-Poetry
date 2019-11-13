@@ -31,6 +31,9 @@ public class CumulativePoetry {
         if(formatter instanceof UpperCase){
             result.append("THIS IS ");
         }
+        else if(formatter instanceof DualFormatter){
+            result.append("THIS IS ");
+        }
         else{
             result.append("This is ");
         }
