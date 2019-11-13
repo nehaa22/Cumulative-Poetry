@@ -88,6 +88,20 @@ class CumulativePoetryTest {
             CumulativePoetry cumulativePoetry = new CumulativePoetry(new UpperCase());
             assertEquals("THIS IS THE HOUSE THAT JACK BUILT\nTHE MALTH THAT LAY IN\nTHE RAT THAT ATE.", cumulativePoetry.toUnfold(3));
         }
+
+        @Test
+        void givenRevealForDayAsFour_WhenUnfoldUsingUppercase_ThenShouldReturnResult() {
+
+            CumulativePoetry cumulativePoetry = new CumulativePoetry(new UpperCase());
+            assertEquals("THIS IS THE HOUSE THAT JACK BUILT\nTHE MALTH THAT LAY IN\nTHE RAT THAT ATE\nTHE CAT THAT KILLED.", cumulativePoetry.toUnfold(4));
+        }
+
+        @Test
+        void givenRevealForDayAsFive_WhenUnfoldUsingUppercase_ThenShouldReturnResult() {
+
+            CumulativePoetry cumulativePoetry = new CumulativePoetry(new UpperCase());
+            assertEquals("THIS IS THE HOUSE THAT JACK BUILT\nTHE MALTH THAT LAY IN\nTHE RAT THAT ATE\nTHE CAT THAT KILLED\nTHE DOG THAT WORRIED.", cumulativePoetry.toUnfold(5));
+        }
     }
 
     @Nested
