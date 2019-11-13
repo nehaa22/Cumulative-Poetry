@@ -28,15 +28,6 @@ public class CumulativePoetry {
     public String toUnfold(int revealForDay) {
 
         StringBuilder result = new StringBuilder();
-        if(formatter instanceof UpperCase){
-            result.append("THIS IS ");
-        }
-        else if(formatter instanceof DualFormatter){
-            result.append("THIS IS ");
-        }
-        else{
-            result.append("This is ");
-        }
 
         for (int i = poetry.size() - 1; i >= poetry.size() - revealForDay; i--) {
             result.append(formatter.format(poetry.get(i)));
