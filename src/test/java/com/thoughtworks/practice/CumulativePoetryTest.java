@@ -71,4 +71,13 @@ class CumulativePoetryTest {
 
     }
 
+    @Test
+    void givenRevealForDayTwoAndEchoAsFour_WhenUnfoldUsingEchoAndUpperCase_ThenShouldReturnResult(){
+
+        DualFormatter dualFormatter=new DualFormatter(new Echo(4),new UpperCase());
+        CumulativePoetry cumulativePoetryU = new CumulativePoetry(dualFormatter);
+        assertEquals("THIS IS THE HOUSE THAT JACK BUILT\nTHE HOUSE THAT JACK BUILT\nTHE HOUSE THAT JACK BUILT\nTHE HOUSE THAT JACK BUILT\nTHE MALTH THAT LAY IN\nTHE MALTH THAT LAY IN\nTHE MALTH THAT LAY IN\nTHE MALTH THAT LAY IN.",cumulativePoetryU.toUnfold(2));
+
+    }
+
 }
