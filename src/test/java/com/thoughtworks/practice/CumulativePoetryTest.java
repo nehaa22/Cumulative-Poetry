@@ -125,6 +125,26 @@ class CumulativePoetryTest {
             assertEquals("THIS IS THE HOUSE THAT JACK BUILT\nTHE HOUSE THAT JACK BUILT\nTHE HOUSE THAT JACK BUILT\nTHE HOUSE THAT JACK BUILT\nTHE MALTH THAT LAY IN\nTHE MALTH THAT LAY IN\nTHE MALTH THAT LAY IN\nTHE MALTH THAT LAY IN.", cumulativePoetryU.toUnfold(2));
 
         }
+
+        @Test
+        void givenRevealForDayOneAndEchoAsFive_WhenUnfoldUsingEchoAndUpperCase_ThenShouldReturnResult() {
+
+            DualFormatter dualFormatter = new DualFormatter(new Echo(5), new UpperCase());
+            CumulativePoetry cumulativePoetryU = new CumulativePoetry(dualFormatter);
+            assertEquals("THIS IS THE HOUSE THAT JACK BUILT\nTHE HOUSE THAT JACK BUILT\nTHE HOUSE THAT JACK BUILT\nTHE HOUSE THAT JACK BUILT\nTHE HOUSE THAT JACK BUILT.", cumulativePoetryU.toUnfold(1));
+
+        }
+
+        @Test
+        void givenRevealForDayThreeAndEchoAsTwo_WhenUnfoldUsingEchoAndUpperCase_ThenShouldReturnResult() {
+
+            DualFormatter dualFormatter = new DualFormatter(new Echo(2), new UpperCase());
+            CumulativePoetry cumulativePoetryU = new CumulativePoetry(dualFormatter);
+            assertEquals("THIS IS THE HOUSE THAT JACK BUILT\nTHE HOUSE THAT JACK BUILT\nTHE MALTH THAT LAY IN\nTHE MALTH THAT LAY IN\nTHE RAT THAT ATE\nTHE RAT THAT ATE.", cumulativePoetryU.toUnfold(3));
+
+        }
+
+
     }
 
 }
