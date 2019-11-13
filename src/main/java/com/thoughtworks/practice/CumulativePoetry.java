@@ -6,9 +6,9 @@ import java.util.List;
 public class CumulativePoetry {
 
     private List<String> poetry = new ArrayList<>();
-    private int echo;
+    private Echo echo;
 
-    public CumulativePoetry(int echo) {
+    public CumulativePoetry(Echo echo) {
         this.echo = echo;
 
         poetry.add("the horse and the hound and the horn that belonged to");
@@ -27,12 +27,11 @@ public class CumulativePoetry {
 
     public String toUnfold(int revealForDay) {
 
-        Echo echoNumber = new Echo(echo);
         StringBuilder result = new StringBuilder();
         result.append("This is ");
 
         for (int i = poetry.size() - 1; i >= poetry.size() - revealForDay; i--) {
-            result.append(echoNumber.toUnfoldByEcho(poetry.get(i)));
+            result.append(echo.toUnfoldByEcho(poetry.get(i)));
         }
         return result.toString().trim()+".";
     }

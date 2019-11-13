@@ -1,6 +1,6 @@
 package com.thoughtworks.practice;
 
-public class Echo {
+class Echo {
 
     private int repeatNumber;
 
