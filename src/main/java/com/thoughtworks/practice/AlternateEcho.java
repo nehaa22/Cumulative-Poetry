@@ -21,11 +21,11 @@ class AlternateEcho implements Formatter {
         }
 
         for (int i = repeatNumber; i > 0; i--) {
-            if (echoCount == 1 || echoCount%2 !=0) {
+            if (echoCount == 1 || echoCount % 2 != 0) {
                 result.append(line).append("\n");
                 break;
             }
-                result.append(line).append("\n");
+            result.append(line).append("\n");
         }
         return result.toString();
     }
