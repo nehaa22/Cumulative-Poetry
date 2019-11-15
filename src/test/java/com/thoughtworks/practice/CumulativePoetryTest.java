@@ -157,10 +157,20 @@ class CumulativePoetryTest {
 
         @Test
         void givenRevealDayFiveAndEchoTwo_WhenUnfoldUsingAlternateEcho_ThenShouldReturnResult(){
-            CumulativePoetry cumulativePoetry = new CumulativePoetry( new AlternateEcho(2));
+            CumulativePoetry cumulativePoetry = new CumulativePoetry(new AlternateEcho(2));
             assertEquals("This is the house that Jack built\nthe malth that lay in\nthe malth that lay in\nthe rat that ate\nthe cat that killed\nthe cat that killed\nthe dog that worried.",cumulativePoetry.toUnfold(5));
 
         }
+
+        @Test
+        void givenRevealDayFive_WhenUnfoldUsingAlternateUpperCase_ThenShouldReturnResult(){
+            CumulativePoetry cumulativePoetry = new CumulativePoetry(new AlternateUpperCase() );
+            assertEquals("THIS IS THE HOUSE THAT JACK BUILT\nthe malth that lay in\nTHE RAT THAT ATE\nthe cat that killed\nTHE DOG THAT WORRIED.",cumulativePoetry.toUnfold(5));
+
+        }
+
+
+
     }
 
 }

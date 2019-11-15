@@ -10,7 +10,6 @@ class AlternateEcho implements Formatter {
 
     private int count = 0;
     int echoCount = 0;
-    int next = 0;
 
     @Override
     public String format(String line) {
