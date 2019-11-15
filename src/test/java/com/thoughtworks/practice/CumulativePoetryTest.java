@@ -161,6 +161,13 @@ class CumulativePoetryTest {
             assertEquals("This is the house that Jack built\nthe malth that lay in\nthe malth that lay in\nthe rat that ate\nthe cat that killed\nthe cat that killed\nthe dog that worried.", cumulativePoetry.toUnfold(5));
 
         }
+
+        @Test
+        void givenRevealDayFiveAndEchoOne_WhenUnfoldUsingAlternateEcho_ThenShouldReturnResult() {
+            CumulativePoetry cumulativePoetry = new CumulativePoetry(new AlternateEcho(1));
+            assertEquals("This is the house that Jack built\nthe malth that lay in\nthe rat that ate\nthe cat that killed\nthe dog that worried.", cumulativePoetry.toUnfold(5));
+
+        }
     }
 
     @Nested
