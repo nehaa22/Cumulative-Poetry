@@ -169,7 +169,14 @@ class CumulativePoetryTest {
         @Test
         void givenRevealDayFive_WhenUnfoldUsingAlternateUpperCase_ThenShouldReturnResult(){
             CumulativePoetry cumulativePoetry = new CumulativePoetry(new AlternateUpperCase() );
-            assertEquals("THIS IS THE HOUSE THAT JACK BUILT\nthe malth that lay in.",cumulativePoetry.toUnfold(5));
+            assertEquals("THIS IS THE HOUSE THAT JACK BUILT\nthe malth that lay in.",cumulativePoetry.toUnfold(2));
+
+        }
+
+        @Test
+        void givenRevealDayTwo_WhenUnfoldUsingAlternateUpperCase_ThenShouldReturnResult(){
+            CumulativePoetry cumulativePoetry = new CumulativePoetry(new AlternateUpperCase() );
+            assertEquals("THIS IS THE HOUSE THAT JACK BUILT\nthe malth that lay in\nTHE RAT THAT ATE\nthe cat that killed\nTHE DOG THAT WORRIED.",cumulativePoetry.toUnfold(5));
 
         }
     }
